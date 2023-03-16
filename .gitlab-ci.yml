@@ -1,0 +1,23 @@
+stages:
+  - build
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - echo "build!!!!"
+build-job:
+  stage: build
+  image: node:18
+  script:
+    - npm install
+    - npm run build
+
+deploy-job:
+  stage: deploy
+  image: node:18
+  script:
+    - npm install
+    - npm install -g netlify-cli --unsafe-perm=true
+    - npm run build
+    - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --dir=./build --prod

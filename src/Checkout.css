@@ -1,0 +1,11 @@
+.checkout {
+  position: fixed;
+  height: 10vw;
+  width: 10vw;
+  background-color: yellow;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: ease-in-out 0.4s;
+}
